@@ -25,6 +25,84 @@
         aesthetic. Volume control and mute functionality provide safe audio
         interaction.
       </p>
+      <p>
+        I designed this project to give parents with toddlers a reliable online
+        instrumental toy that is safe, ad-free, and easy to use. Children can
+        experiment with sound and shapes without external distractions, making
+        it a fun and secure environment for musical play.
+      </p>
+
+      <h2>JavaScript and Interactive Functionality</h2>
+      <p>
+        JavaScript is the core of this project, handling interactivity, sound,
+        and visuals. I used <strong>p5.js</strong> to create and manage the
+        canvas and shapes, and the <strong>Web Audio API</strong> for sound
+        generation. Together, they allow children to click or tap and instantly
+        see and hear the results.
+      </p>
+
+      <p>
+        The code keeps track of important states like the <em>current song</em>,
+        <em>note index</em>, <em>volume</em>, <em>mute status</em>, and
+        <em>active oscillators</em>. For example, the note sequences for each
+        song are stored in an object:
+      </p>
+
+      <pre>
+const songs = {
+  itsy: { notes: [0,0,1,2,2,1,0], durations: [0.4,0.4,0.4,0.5,0.5,0.4,0.8] },
+  twinkle: { notes: [0,0,3,3,4,4,3], durations: [0.5,0.5,0.5,0.5,0.5,0.5,0.8] }
+};
+      </pre>
+
+      <p>
+        When the user clicks, an oscillator is created to play the corresponding
+        note, while a colorful shape appears at the click location:
+      </p>
+
+      <pre>
+const osc = new p5.Oscillator('sine');
+osc.freq(frequency);
+osc.start();
+osc.stop(audioContext.currentTime + duration);
+shapes.push(new DancingShape(x, y, size, color));
+      </pre>
+
+      <p>
+        Volume and mute functionality are fully controlled with JavaScript.
+        Event listeners update the slider, stop oscillators if muted, and change
+        icons dynamically:
+      </p>
+
+      <pre>
+volumeSlider.addEventListener('input', () =&gt; {
+  currentVolume = parseFloat(volumeSlider.value);
+  if(currentVolume === 0) {
+    oscillators.forEach(osc =&gt; osc.stop());
+  }
+});
+      </pre>
+
+      <p>
+        The draw loop in p5.js continuously updates shapes to create lively
+        animations:
+      </p>
+
+      <pre>
+function draw() {
+  clear();
+  for (let shape of shapes) {
+    shape.update();  // Move and fade shape
+    shape.display(); // Draw shape
+  }
+}
+      </pre>
+
+      <p>
+        JavaScript also manages song selection. Clicking a song button resets
+        the note sequence and highlights the selected song, allowing children to
+        experience rhythm while exploring creatively.
+      </p>
 
       <h2>Feedback, Information Design, Mapping, and Learnability</h2>
       <ul>
@@ -65,6 +143,12 @@
         oscillator management, and responsive resizing. Features were tested
         iteratively to ensure accurate visual and audio feedback.
       </p>
+      <p>
+        Reflecting on the JavaScript process, managing multiple oscillators and
+        the audio context was the most complex part. Debugging and refining the
+        timing of notes and animations helped me understand how to synchronise
+        visuals with sound effectively.
+      </p>
 
       <h2>Most Proud Design Aspect</h2>
       <p>
@@ -79,6 +163,20 @@
         Managing <strong>audio context and oscillators</strong> was challenging.
         I had to ensure sounds stop correctly when muted, handle multiple
         oscillators, and resume the audio context across browsers.
+      </p>
+
+      <h2>Evaluation and Reflection</h2>
+      <p>
+        I think the project works well: children can explore sound and shapes
+        intuitively, and parents can feel confident that the toy is safe and
+        ad-free. The interface provides clear, immediate feedback, and the
+        random shapes keep play engaging.
+      </p>
+      <p>
+        In the future, I would approach this differently by adding a more
+        educational element. For example, shapes could display their names or
+        random letters could appear on interaction, so children would be
+        learning as they play with the instrumental toy.
       </p>
 
       <h2>Creative Prompt and Advanced Techniques</h2>
