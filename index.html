@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kids' Interactive Song Maker - Reflection</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kids' Interactive Song Maker - Reflection</h1>
+
+      <h2>Guiding Values and UI Design</h2>
+      <p>
+        My design focused on
+        <strong>playfulness, accessibility, and immediate feedback</strong>. The
+        interface encourages children to explore music visually and aurally. I
+        used a colourful gradient background, large icon buttons for song
+        selection, and animated shapes that respond to user interaction. The
+        Bubblegum Sans font and playful icons reinforce a kid-friendly
+        aesthetic. Volume control and mute functionality provide safe audio
+        interaction.
+      </p>
+
+      <h2>Feedback, Information Design, Mapping, and Learnability</h2>
+      <ul>
+        <li>
+          <strong>Feedback:</strong> Clicking or tapping creates sound and
+          animated shapes, giving immediate auditory and visual confirmation.
+          Volume changes update the icon in real time, and active songs are
+          highlighted.
+        </li>
+        <li>
+          <strong>Information Design:</strong> Instructions appear briefly and
+          fade out, keeping the interface uncluttered.
+        </li>
+        <li>
+          <strong>Mapping:</strong> Song buttons are at the top center, volume
+          controls at the top right, and the interactive canvas fills the
+          remaining area.
+        </li>
+        <li>
+          <strong>Learnability:</strong> Intuitive icons and minimal
+          instructions make it easy for children to explore without prior
+          guidance.
+        </li>
+      </ul>
+
+      <h2>Significant Changes Since Work-in-Progress</h2>
+      <p>
+        I implemented the volume control with mute toggle, refined the shape
+        animations for smoother motion, added fail-safe logic for icons, and
+        ensured the audio context resumes reliably on interaction.
+      </p>
+
+      <h2>Production Timeline and Process</h2>
+      <p>
+        Development started with the p5.js canvas and basic interaction logic.
+        The second phase focused on UI design and visual feedback. The final
+        phase added advanced features like volume control, mute functionality,
+        oscillator management, and responsive resizing. Features were tested
+        iteratively to ensure accurate visual and audio feedback.
+      </p>
+
+      <h2>Most Proud Design Aspect</h2>
+      <p>
+        I am most proud of the
+        <strong>integration of visual and auditory feedback</strong>. Each tap
+        produces a dynamic, colourful shape with the correct note, making the
+        interface engaging and fun.
+      </p>
+
+      <h2>Most Challenging Design Aspect</h2>
+      <p>
+        Managing <strong>audio context and oscillators</strong> was challenging.
+        I had to ensure sounds stop correctly when muted, handle multiple
+        oscillators, and resume the audio context across browsers.
+      </p>
+
+      <h2>Creative Prompt and Advanced Techniques</h2>
+      <p>
+        This project follows the <strong>No Text Characters</strong> prompt.
+        Interaction relies on icons, shapes, and sound. I used
+        <strong>Math.random()</strong> extensively to generate random colours,
+        shapes, and positions, creating a unique experience with each
+        interaction.
+      </p>
+
+      <h2>Links</h2>
+      <ul>
+        <li>
+          <a href="https://raniaprototype1.netlify.app/" target="_blank"
+            >Live Prototype</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/Ranianazz/prototype2" target="_blank"
+            >Code Repository</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
